@@ -24,17 +24,17 @@ const dataBelanjaan = [
 const listBelanjaan = (dataBelanjaan) => {
 
   return dataBelanjaan.map((list)=> {
-    return `${list.nama} x ${list.kuantitas}`;
+    return `- ${list.nama} x ${list.kuantitas}`;
   });
  };
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const totalBelanjaan = (dataBelanjaan) =>{
-  return dataBelanjaan.map((list) => {
-    return list.harga * list.kuantitas;
-  });
-  
-};
+const totalBelanjaan = dataBelanjaan
+    .reduce((harga,kuantitas) => {
+          return harga*kuantitas
+    },0);
+ 
+
 
 // ! JANGAN DIMODIFIKASI
 const main = () => {
