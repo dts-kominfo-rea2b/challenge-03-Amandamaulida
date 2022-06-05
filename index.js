@@ -29,10 +29,11 @@ const listBelanjaan = (dataBelanjaan) => {
  };
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const totalBelanjaan = dataBelanjaan
-    .reduce((harga,kuantitas) => {
-          return harga*kuantitas
-    },0);
+const totalBelanjaan = (dataBelanjaan) => {
+  return dataBelanjaan.map((list)=> {
+             return (list.harga * list.kuantitas)
+});
+}
  
 
 
